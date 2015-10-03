@@ -24,6 +24,11 @@
 "[数字]k [数字]行上へ移動
 "---------------------------------------------------------------------------
 
+" NeoBundle設定
+source ~/dotfiles/.vimrc_neobundle
+" color設定
+source ~/dotfiles/.vimrc_colors
+
 "---------------------------------------------------------------------------
 " 検索に関する設定:
 "
@@ -83,24 +88,9 @@ set wildmode=longest,list
 "
 " ビープ音を鳴らさない
 set vb t_vb=
-"let g:hybrid_use_iTerm_colors = 1
-colorscheme brogrammer
+" helpドキュメントの検索順を en → ja にする
+set helplang=en,ja
+" syntax による色分けをする
 syntax on
-set t_Co=256
 
-if has('vim_starting')
-   " 初回起動時のみruntimepathにneobundleのパスを指定する
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
 
-" NeoBundleを初期化
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" インストールするプラグインをここに記述
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler'
-
-call neobundle#end()
-
-" ファイルタイプ別のプラグイン/インデントを有効にする
-filetype plugin indent on
