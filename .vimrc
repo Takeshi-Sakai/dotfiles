@@ -8,9 +8,9 @@
 "w 次の単語の頭へ移動
 "e 次の単語の末尾へ移動
 "b 前の単語の頭へ移動
-"0 行頭へ移動
+"0 行頭へ移動 → 1へ変更
 "^ 文頭へ移動
-"$ 行末へ移動
+"$ 行末へ移動 → 0へ変更
 "H 画面内の一番上の行へ移動
 "M 画面内の真ん中の行へ移動
 "L 画面内の一番下の行へ移動
@@ -22,6 +22,8 @@
 "G ファイルの末尾へ移動
 "[数字]j [数字]行下へ移動
 "[数字]k [数字]行上へ移動
+"gt タブを右に移動
+"gT タブを左に移動
 "---------------------------------------------------------------------------
 
 " NeoBundle設定
@@ -46,8 +48,8 @@ set wrapscan
 "
 " 行番号の表示
 set number 
-" タイトルの表示
-"set title
+" Vim エディタ終了時に"Thanks for Flying Vim"の表示を出さなくする
+"set notitle
 " ルーラーを表示
 set ruler
 " 空白文字を可視化する
@@ -85,12 +87,66 @@ set wildmode=longest,list
 
 "---------------------------------------------------------------------------
 "" 基本設定:
-"
+" 
+"set nocompatible
 " ビープ音を鳴らさない
 set vb t_vb=
+
 " helpドキュメントの検索順を en → ja にする
 set helplang=en,ja
-" syntax による色分けをする
-syntax on
 
+" 構文ハイライトを有効にする on → 現在の設定を破棄しデフォルトの色を反映させる
+"syntax on
+" 構文ハイライトを有効にする enable → 現在の設定については上書きしない
+" :highlight 等で設定した syntax を反映させることができる
+syntax enable
+
+" OSのクリップボードを使用する(vim の version が 7.4以上の必要がある)
+set clipboard+=unnamed
+" ビジュアルモードで選択したテキストをクリップボードにコピーする
+"set clipboard+=autoselect
+
+" ターミナルでマウスを使用できるようにする
+" ノーマル、ビジュアル、挿入、コマンドラインモードの全てで有効にする
+set mouse=a
+" 範囲選択、ウィンドウサイズの変更、タブの移動などのマウスの拡張機能が使用できる
+set ttymouse=xterm2
+
+"---------------------------------------------------------------------------
+"" ステータスラインの設定:
+" 
+" 常にステータスラインを表示する
+"set laststatus=2
+
+" Powerlineの設定
+"let g:Powerline_symbols = 'fancy'
+
+"---------------------------------------------------------------------------
+"" keymap 設定:
+
+" normal prefix
+noremap <Space>t :<C-u>tabnew
+
+" plugin prefix
+" unite
+nnoremap [unite] <Nop>
+nmap <Space>u [unite]
+
+" noremal + visual mode
+" 1 で行頭、0 で行末へ
+noremap 1 0
+noremap 0 $
+
+" insert mode
+" insert モード時に方向キーを有効にする
+imap <Esc>OA <Up>
+imap <Esc>OB <Down>
+imap <Esc>OC <Right>
+imap <Esc>OD <Left>
+
+" insert モード時にキーで方向移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
