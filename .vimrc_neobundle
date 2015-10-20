@@ -59,6 +59,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " ステータスラインをかっこよくする
+NeoBundle 'alpaca-tc/alpaca_powertabline'
 " powerline
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 " powerline 表示に必要な Ricty for powerline の生成に必要
@@ -107,7 +108,7 @@ inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 """"""""""""""""""""""""""""""
 " NERDTree の設定
 """"""""""""""""""""""""""""""
-" NERDTree のマップ
+" NERDTree の on/off
 nnoremap <Space>n :<C-u>NERDTreeToggle<CR>
 " 隠しファイルをデフォルトで表示させる
 let NERDTreeShowHidden = 1
@@ -120,9 +121,21 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 """"""""""""""""""""""""""""""
 " vim-indent-guides の設定
 """"""""""""""""""""""""""""""
-" vim を立ち上げた時に自動的にvim-indent-guidesをon にする
+" IndendGuids の on/off
+nnoremap <Space>ig :<C-u>IndentGuidesToggle<Enter>
+" vim を立ち上げた時に自動的に vim-indent-guides を on にする
 let g:indent_guides_enable_on_vim_startup=1
+" 自動的に色付けをしない
+let g:indent_guides_auto_colors=0
+" インデントの色付け幅
+let g:indent_guides_guide_size = 1
+" 2段目から色付けする
+let g:indent_guides_start_level=2
 
+" 奇数インデントの色
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=238
+" 偶数インデントの色
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
 
 """"""""""""""""""""""""""""""
 " powerline の設定

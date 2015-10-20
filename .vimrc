@@ -54,7 +54,7 @@ set number
 set ruler
 " 空白文字を可視化する
 set list
-" 常にステータス行を表示 (詳細は:he laststatus)
+" 常にステータス行を表示 (詳細は:help laststatus)
 set laststatus=2
 " コマンドラインの高さ (Windows用gvim使用時はgvimrcを編集すること)
 set cmdheight=2
@@ -78,7 +78,7 @@ set shiftwidth=4
 set autoindent
 " バックスペースでインデントや改行を削除できるようにする
 set backspace=indent,eol,start
-" 括弧を閉じる時に対応する括弧を強調示する
+" 括弧を閉じる時に対応する括弧を強調して表示する
 set showmatch
 " 補完機能を強化する
 set wildmenu
@@ -88,6 +88,7 @@ set wildmode=longest,list
 "---------------------------------------------------------------------------
 "" 基本設定:
 " 
+"set term=screen-256color
 "set nocompatible
 " ビープ音を鳴らさない
 set vb t_vb=
@@ -103,7 +104,7 @@ syntax enable
 
 " OSのクリップボードを使用する(vim の version が 7.4以上の必要がある)
 set clipboard+=unnamed
-" ビジュアルモードで選択したテキストをクリップボードにコピーする
+" ビジュアルモードで選択したテキストを自動でクリップボードにコピーする
 "set clipboard+=autoselect
 
 " ターミナルでマウスを使用できるようにする
@@ -111,15 +112,6 @@ set clipboard+=unnamed
 set mouse=a
 " 範囲選択、ウィンドウサイズの変更、タブの移動などのマウスの拡張機能が使用できる
 set ttymouse=xterm2
-
-"---------------------------------------------------------------------------
-"" ステータスラインの設定:
-" 
-" 常にステータスラインを表示する
-"set laststatus=2
-
-" Powerlineの設定
-"let g:Powerline_symbols = 'fancy'
 
 "---------------------------------------------------------------------------
 "" keymap 設定:
@@ -144,9 +136,4 @@ imap <Esc>OB <Down>
 imap <Esc>OC <Right>
 imap <Esc>OD <Left>
 
-" insert モード時にキーで方向移動
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
 
