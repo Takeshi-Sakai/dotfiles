@@ -2,6 +2,12 @@
 "" color の設定
 "---------------------------------------------------------------------------
 
+" 構文ハイライトを有効にする on → 現在の設定を破棄しデフォルトの色を反映させる
+"syntax on
+" 構文ハイライトを有効にする enable → 現在の設定については上書きしない
+" :highlight 等で設定した syntax を反映させることができる
+syntax enable
+
 " colorscheme の設定
 colorscheme brogrammer
 " terminal の色数を256色に

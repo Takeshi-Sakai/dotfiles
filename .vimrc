@@ -96,12 +96,6 @@ set vb t_vb=
 " helpドキュメントの検索順を en → ja にする
 set helplang=en,ja
 
-" 構文ハイライトを有効にする on → 現在の設定を破棄しデフォルトの色を反映させる
-"syntax on
-" 構文ハイライトを有効にする enable → 現在の設定については上書きしない
-" :highlight 等で設定した syntax を反映させることができる
-syntax enable
-
 " OSのクリップボードを使用する(vim の version が 7.4以上の必要がある)
 set clipboard+=unnamed
 " ビジュアルモードで選択したテキストを自動でクリップボードにコピーする
