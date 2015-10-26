@@ -1,0 +1,9 @@
+[user]
+    name = Takeshi Sakai
+    email = s.takeshi16@gmail.com
+[color]
+    ui = true
+    status = auto
+    diff = auto
+[credential]
+    helper = osxkeychain
