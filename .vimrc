@@ -84,6 +84,11 @@ set showmatch
 set wildmenu
 " 補完機能を共通する最長部分まで保管して、次にlistを表示させる
 set wildmode=longest,list
+" insertモードを抜けるとIMEオフ
+set noimdisable
+set iminsert=0 imsearch=0
+set noimcmdline
+inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
 "---------------------------------------------------------------------------
 "" 基本設定:
@@ -112,11 +117,6 @@ set ttymouse=xterm2
 
 " normal prefix
 noremap <Space>t :<C-u>tabnew
-
-" plugin prefix
-" unite
-nnoremap [unite] <Nop>
-nmap <Space>u [unite]
 
 " noremal + visual mode
 " 1 で行頭、0 で行末へ
