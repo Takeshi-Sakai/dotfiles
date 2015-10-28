@@ -78,6 +78,8 @@ set shiftwidth=4
 set autoindent
 " バックスペースでインデントや改行を削除できるようにする
 set backspace=indent,eol,start
+" カーソルを行頭、行末で止まらないようにする
+set whichwrap=b,s,h,l,<,>,[,]
 " 括弧を閉じる時に対応する括弧を強調して表示する
 set showmatch
 " 補完機能を強化する
