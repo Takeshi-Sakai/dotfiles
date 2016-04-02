@@ -34,6 +34,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   NeoBundle 'w0ng/vim-hybrid'
   " hybrid カラースキーム
   NeoBundle 'marciomazza/vim-brogrammer-theme'
+  " All Hallow's Eve カラースキーム
+  NeoBundle 'npverni/allhallowseve'
 
 " }}}
 
