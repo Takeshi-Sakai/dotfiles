@@ -46,7 +46,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   " Unite file_mru
   NeoBundle 'Shougo/neomru.vim'
   " Unite vimproc
-  NeoBundle 'Shougo/vimproc.vim'
+  NeoBundle 'Shougo/vimproc.vim', {
+    \ 'build' : {
+    \     'windows' : 'make -f make_mingw32.mak',
+    \     'cygwin' : 'make -f make_cygwin.mak',
+    \     'mac' : 'make -f make_mac.mak',
+    \     'unix' : 'make -f make_unix.mak',
+    \    },
+    \ }
 
 " }}}
 
