@@ -144,3 +144,6 @@ imap <Esc>OC <Right>
 imap <Esc>OD <Left>
 
 
+"---------------------------------------------------------------------------
+"" syntax 設定:
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']

@@ -79,6 +79,9 @@ NeoBundle 'scrooloose/nerdtree'
 " markdown のsyntax
 NeoBundle 'tpope/vim-markdown'
 
+" syntax check
+NeoBundle 'scrooloose/syntastic.git'
+
 " Vim を開いた状態で color-scheme のプレビューと選択ができる
 NeoBundle 'ujihisa/unite-colorscheme'
 
