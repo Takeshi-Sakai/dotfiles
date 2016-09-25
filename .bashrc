@@ -3,12 +3,15 @@ case "${OSTYPE}" in
     darwin*)
         # Ensure user-installed binaries take precedence
         export PATH=/usr/local/bin:$PATH
-        
-        # Setting PATH for Python 2.7
-        # The orginal version is saved in .bash_profile.pysave
-        PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-        export PATH
-        
+
+        # Setting Virtualenvwrapper
+        if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+            export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+            export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+            export WORKON_HOME=~/Virtualenvs
+            source /usr/local/bin/virtualenvwrapper.sh
+        fi
+
         alias doc="cd /Users/takeshi/Documents"
         alias ls="ls -G"
         alias ll="ls -lG"
