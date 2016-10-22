@@ -114,8 +114,12 @@ set vb t_vb=
 " helpドキュメントの検索順を en → ja にする
 set helplang=en,ja
 
-" OSのクリップボードを使用する(vim の version が 7.4以上の必要がある)
-set clipboard+=unnamed
+if has("unix")
+    set clipboard+=unnamedplus
+else
+    " OSのクリップボードを使用する(vim の version が 7.4以上の必要がある)
+    set clipboard+=unnamed
+endif
 " ビジュアルモードで選択したテキストを自動でクリップボードにコピーする
 "set clipboard+=autoselect
 
