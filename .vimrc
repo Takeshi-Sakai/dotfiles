@@ -102,6 +102,8 @@ set noimdisable
 set iminsert=0 imsearch=0
 set noimcmdline
 inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+" 日本語記号に全角文字を割り当てる
+set ambiwidth=double
 
 "---------------------------------------------------------------------------
 "" 基本設定:
