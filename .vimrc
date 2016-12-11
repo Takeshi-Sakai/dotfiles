@@ -117,6 +117,12 @@ set helplang=en,ja
 if has("mac")
     " OSのクリップボードを使用する(vim の version が 7.4以上の必要がある)
     set clipboard+=unnamed
+    " Vimの内部で使われる文字コード
+    set encoding=utf-8
+    " 文字コードの自動判別（ファイル表示の際に使用することのできる文字コード）
+    set fileencodings=iso-2022-jp,cp932,sjis,enc-jp,utf-8
+    " 改行文字コードの自動判別
+    set fileformats=dos,unix,mac
 elseif has("unix")
     set clipboard+=unnamedplus
 endif
