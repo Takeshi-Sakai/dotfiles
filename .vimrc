@@ -125,9 +125,15 @@ if has("mac")
     set fileencodings=iso-2022-jp,cp932,sjis,enc-jp,utf-8
     " 改行文字コードの自動判別
     set fileformats=dos,unix,mac
-elseif has("unix")
-    set clipboard+=unnamedplus
+elseif has("unix") " Windows MSYS2
+"    set clipboard+=unnamedplus
+    set encoding=utf-8
+    set fileencodings=iso-2022-jp,cp932,sjis,enc-jp,utf-8
+    set fileformats=dos,unix,mac
+
+    set mouse-=a
 endif
+
 " ビジュアルモードで選択したテキストを自動でクリップボードにコピーする
 "set clipboard+=autoselect
 

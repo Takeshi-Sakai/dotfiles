@@ -22,6 +22,13 @@ case "${OSTYPE}" in
         alias ll='ls -l --color'
         alias la='ls -a --color'
         ;;
+    msys*)
+        export http_proxy="172.25.0.42:6060"
+        export https_proxy=$http_proxy
+        export ftp_proxy=$http_proxy
+        export PATH=/c/Python36:/c/Python36/scripts:/c/Git/cmd:/c/Ruby23-x64/bin:$PATH
+        alias python='winpty python'
+        ;;
 esac
 
 alias log='tee ~/sshclient/`date "+%Y%m%d_%H%M%S"`.log'
