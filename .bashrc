@@ -26,7 +26,7 @@ case "${OSTYPE}" in
         export http_proxy="172.25.0.42:6060"
         export https_proxy=$http_proxy
         export ftp_proxy=$http_proxy
-        export PATH=/c/Python36:/c/Python36/scripts:/c/Git/cmd:/c/Ruby23-x64/bin:$PATH
+        export PATH=/c/Python36:/c/Python36/scripts:/c/Git/cmd:/c/Ruby23-x64/bin:/c/usr/bin:$PATH
         alias python='winpty python'
         ;;
 esac
