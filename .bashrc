@@ -2,13 +2,13 @@
 case "${OSTYPE}" in
     darwin*)
         # Ensure user-installed binaries take precedence
-        export PATH=/usr/local/bin:$PATH
+        export PATH="/usr/local/bin:/usr/local/opt/python/libexec/bin:$PATH"
 
         # Setting Virtualenvwrapper
         if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-            export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+            export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
             export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-            export WORKON_HOME=~/Virtualenvs
+            export WORKON_HOME=~/.virtualenvs
             source /usr/local/bin/virtualenvwrapper.sh
         fi
 
