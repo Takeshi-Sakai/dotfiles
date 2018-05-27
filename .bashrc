@@ -22,6 +22,11 @@ case "${OSTYPE}" in
             source /usr/local/bin/virtualenvwrapper.sh
         fi
 
+        # Setting pyenv & pyenv-virtualenv
+        export PYENV_ROOT=/usr/local/opt/pyenv
+        if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+        if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
         alias doc="cd /Users/takeshi/Documents"
         alias ls="ls -G"
         alias ll="ls -lG"

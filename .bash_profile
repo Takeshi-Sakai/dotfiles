@@ -6,4 +6,4 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # Set lo alias IP for Docker
-sudo ifconfig lo0 alias 192.168.200.1/32
+# sudo ifconfig lo0 alias 192.168.200.1/32
