@@ -3,7 +3,10 @@ case "${OSTYPE}" in
     darwin*)
         # Ensure user-installed binaries take precedence
         export PATH="/usr/local/bin:/usr/local/opt/python/libexec/bin:$PATH"
-
+        # ruby is keg-only, which means it was not symlinked into /usr/local,
+        export PATH="/usr/local/opt/ruby/bin:$PATH"
+        # path for nodebrew
+        export PATH="$HOME/.nodebrew/current/bin:$PATH"
         # 
         function share_history {
             history -a
